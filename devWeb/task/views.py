@@ -8,12 +8,7 @@ def home(request):
 
 #SignUp
 def signup(request):
-  if request.method == 'GET':
-    return render(request, 'signup.html')
-  else:
-    if request.POST['password1'] == request.POST['password2']
-    try:
-      user = User.objects.create_user(username)
+  return render(request, 'signup.html')
 
 #SignIn
 def signin(request):
