@@ -20,7 +20,7 @@ def signup(request):
         user = User.objects.create_user(username=request.POST['username'], password=request.POST['password1'])
         user.save()                
         login(request, user)
-        return redirect('home')
+        return redirect('tasks')
       except:
         return render (request,'signup.html', { 
           'form' : UserCreationForm ,
@@ -49,3 +49,8 @@ def signin(request):
     else:
       login(request, user)
       return redirect('tasks')
+
+
+#Tasks
+def tasks(request):
+  return render(request, 'tasks.html')
