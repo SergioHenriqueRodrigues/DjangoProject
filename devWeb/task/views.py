@@ -3,6 +3,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 
 #Home
 def home(request):
@@ -51,9 +52,12 @@ def signin(request):
       return redirect('tasks')
 
 #Sair
+@login_required
 def sair(request):
-  return render(request, 'sair.html')
+  logout (request)
+  return redirect('home')
 
 #Tasks
+@login_required
 def tasks(request):
   return render(request, 'tasks.html')
