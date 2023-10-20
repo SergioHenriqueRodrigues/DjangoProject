@@ -50,6 +50,9 @@ def signin(request):
       login(request, user)
       return redirect('tasks')
 
+#Sair
+def sair(request):
+  return render(request, 'sair.html')
 
 #Tasks
 def tasks(request):
