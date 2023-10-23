@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth import login, logout, authenticate
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
+from .forms import TaskForm
 
 #Home
 def home(request):
@@ -61,3 +62,27 @@ def sair(request):
 @login_required
 def tasks(request):
   return render(request, 'tasks.html')
+
+@login_required  
+def criandoTarefa(request):
+    
+    if request.method == 'GET':
+        return render(request, 'criandoTarefa.html', {
+            'form' : TaskForm
+        })
+
+    else:
+
+        try:
+            form = TaskForm(request.POST)
+            new_task = form.save(commit=False)
+            new_task.user = request.user
+            new_task.save()
+            return redirect('tasks')
+
+        except ValueError:
+
+            return render(request,'criandoTarefa.html', {
+                'form' : TaskForm,
+                'error' : 'Favor inserir dados validos'
+            })      
