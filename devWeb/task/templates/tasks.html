@@ -1,6 +1,24 @@
 {% extends 'menu.html' %}
 {% block content %}
 
-<h1>Done!</h1>
-
+<main class="container mt-5">
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <h1 class="text-center"> Tarefas </h1>
+      <ul class="list-group">
+        {% for task in tasks %}
+          <a class="list-group-item" href="{% url 'taskDetalhe'  task.id %}">
+            <header class="d-flex justify-content-between">
+            {% if task.important %}
+            <strong class="fw-bold text-success"> {{task.title}}</strong>
+            {% else %}
+            <p class="fw-bold"> {{task.title}} </p>
+            {% endif %}
+            <p> By: {{ task.user.username }}</p>
+          </header>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</main>
 {% endblock %}
