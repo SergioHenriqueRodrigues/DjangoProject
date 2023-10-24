@@ -1,6 +1,13 @@
 {% extends 'menu.html' %}
 {% block content %}
 
+<head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</head>
+
 <body class=" bg-dark">
   <main class="container py-5">
     <div class="row gap-3 justify-content-center align-items-center" style="color: white;">
@@ -12,61 +19,38 @@
         YourNotes está aqui para simplificar a sua vida.</h5>
       <hr class="bg-light">
 
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Crie e Organize Notas</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Com apenas alguns cliques, você pode criar notas pessoais.
-            Dê a cada nota um título significativo e organize-as por categorias para encontrar facilmente o que você
-            procura.</p>
+      <div id="cardCarousel" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Crie e Organize Notas</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">Com apenas alguns cliques, você pode criar notas
+                  pessoais. Dê a cada nota um título significativo e organize-as por categorias para encontrar
+                  facilmente o que você procura.</p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Acesso de Qualquer Lugar</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">O YourNotes é totalmente online e sincronizado na
+                  nuvem, o que significa que você pode acessar suas notas de qualquer dispositivo a qualquer momento.
+                </p>
+              </div>
+            </div>
+          </div>
+          <!-- Adicione o restante dos itens do carousel aqui -->
         </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Acesso de Qualquer Lugar</h5>
-          <p class="card-text card-subtitle mb-2 text-muted"> O YourNotes é totalmente online e sincronizado na nuvem, o
-            que significa que você pode acessar suas notas de qualquer dispositivo a qualquer momento.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Privacidade e Segurança</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Suas notas são preciosas, e levamos a sua privacidade a
-            sério. O YourNotes oferece segurança de ponta para proteger suas informações pessoais.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Personalização</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Escolha entre uma variedade de temas e estilos para
-            personalizar a aparência do seu espaço de notas.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Lembretes e Notificações</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Defina lembretes para suas notas e receba notificações para
-            nunca mais esquecer um compromisso importante.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Colaboração</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Compartilhe notas com amigos e familiares para colaboração
-            em projetos ou listas compartilhadas.</p>
-        </div>
-      </div>
-
-      <div class="card" style="width: 18rem; height: 14rem;">
-        <div class="card-body">
-          <h5 class="card-title text-dark">Busca Inteligente</h5>
-          <p class="card-text card-subtitle mb-2 text-muted">Encontre suas notas instantaneamente com nossa poderosa
-            ferramenta de busca.</p>
-        </div>
+        <a class="carousel-control-prev" href="#cardCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Anterior</span>
+        </a>
+        <a class="carousel-control-next" href="#cardCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Próximo</span>
+        </a>
       </div>
 
       <hr class="bg-light">
@@ -87,31 +71,41 @@
         <div class="wrapper">
           <a href="#demo-modal"><button class="button">SIM</button></a>
         </div>
-        <button class="button" id="move" onmouseover="runaway(this)">NÃO</button>
+        <button  class="button" id="move" onmouseover="runaway(this)"><a href="#demo-nao" style="text-decoration: none; color: white;">NÃO</a></button>
       </div>
-
     </div>
+
+    <!--MODAL SIM-->
     <div id="demo-modal" class="modal">
       <div class="modal__content">
         <h1 style="font-family: 'Courier New', Courier, monospace;">YourNotes</h1>
-        <p>Obrigado por gostar do nosso trabalho, estamos sempre trabalhando para melhorar sua experiência como usuário.</p>
+        <p>Obrigado por gostar do nosso trabalho, estamos sempre trabalhando para melhorar sua experiência como usuário.
+        </p>
         <hr>
         <div class="modal__footer">
-          Feito por <a href="https://youtu.be/dQw4w9WgXcQ?si=zMK9_Nbj-Hv-5bzl"
-            target="_blank">@YourNotesTeam</a>
+          Feito por <a href="https://youtu.be/dQw4w9WgXcQ?si=zMK9_Nbj-Hv-5bzl" target="_blank">@YourNotesTeam</a>
+        </div>
+        <a href="#" class="modal__close">&times;</a>
+      </div>
+    </div>
+
+    <!--MODAL NÃO-->
+    <div id="demo-nao" class="modal">
+      <div class="modal__content">
+        <h1 style="font-family: 'Courier New', Courier, monospace;">YourNotes</h1>
+        <p>você é insistente não é? Custa dar uma chance para o nosso produto?
+        </p>
+        <hr>
+        <div class="modal__footer">
+          Feito por <a href="https://youtu.be/dQw4w9WgXcQ?si=zMK9_Nbj-Hv-5bzl" target="_blank">@YourNotesTeam</a>
         </div>
         <a href="#" class="modal__close">&times;</a>
       </div>
     </div>
   </main>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
-    integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.min.js"
-    integrity="sha384-BBtl+eGJRgqQAUMxJ7pMwbEyER4l1g+O15P+16Ep7Q9Q+zqX6gSbd85u4mG4QzX+"
-    crossorigin="anonymous"></script>
 </body>
 
+<!--BUTTON STYLE-->
 <style>
   #move {
     position: relative;
@@ -159,6 +153,15 @@
   hgroup {
     width: 100%;
     margin: 0 0 2rem 0;
+  }
+</style>
+
+<!--CARROSEL STYLE-->
+<style>
+  /* Centralize o card ativo horizontalmente */
+  .carousel-item.active {
+    display: flex;
+    justify-content: center;
   }
 </style>
 
@@ -224,6 +227,7 @@
   }
 </style>
 
+<!--BUTTON SCRIPT-->
 <script>
   function runaway(id) {
     id.style.top = Math.round(Math.random() * 250) - 100 + 'px';
