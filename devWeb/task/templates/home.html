@@ -16,9 +16,12 @@
       <h5 class="d-flex text-center" style="color: white; font-family: monospace;">No YourNotes, a simplicidade se
         encontra com a praticidade para proporcionar a você a ferramenta perfeita para organizar e manter todas as suas
         notas pessoais em um único lugar. Seja para lembretes, listas de tarefas, ou apenas para guardar pensamentos, o
-        YourNotes está aqui para simplificar a sua vida.</h5>
+        YourNotes está aqui para simplificar a sua vida.
+      </h5>
+
       <hr class="bg-light">
 
+      <!--CAROUSEL-->
       <div id="cardCarousel" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
           <div class="carousel-item active">
@@ -41,7 +44,48 @@
               </div>
             </div>
           </div>
-          <!-- Adicione o restante dos itens do carousel aqui -->
+          
+          <div class="carousel-item">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Personalização</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">Escolha entre uma variedade de temas e estilos para
+                  personalizar a aparência do seu espaço de notas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Lembretes e Notificações</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">Defina lembretes para suas notas e receba
+                  notificações para nunca mais esquecer um compromisso importante.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Colaboração</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">Compartilhe notas com amigos e familiares para
+                  colaboração em projetos ou listas compartilhadas.
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="card" style="width: 18rem; height: 14rem;">
+              <div class="card-body">
+                <h5 class="card-title text-dark">Busca Inteligente</h5>
+                <p class="card-text card-subtitle mb-2 text-muted">Encontre suas notas instantaneamente com nossa
+                  poderosa ferramenta de busca.
+                </p>
+              </div>
+            </div>
+          </div>
+
         </div>
         <a class="carousel-control-prev" href="#cardCarousel" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -54,6 +98,8 @@
       </div>
 
       <hr class="bg-light">
+
+      <!--MENSAGEM FINAL-->
       <div style="font-family: monospace;">
         <h4 class="d-flex justify-content-center">Comece Agora:</h4>
         <h5 class="d-flex text-center">Criar uma conta no YourNotes é rápido e fácil. Basta fazer login e começar a
@@ -65,13 +111,16 @@
           simples, intuitiva e altamente eficaz. Seja bem-vindo ao futuro das notas pessoais!
         </h5>
       </div>
+
       <hr class="bg-light">
+
       <h2 class="text-center" style="font-family: monospace;">Planeja se juntar a gente?</h2>
       <div class="button-wrapper d-flex justify-content-center">
         <div class="wrapper">
           <a href="#demo-modal"><button class="button">SIM</button></a>
         </div>
-        <button  class="button" id="move" onmouseover="runaway(this)"><a href="#demo-nao" style="text-decoration: none; color: white;">NÃO</a></button>
+        <button class="button" id="move" onmouseover="runaway(this)"><a href="#demo-nao"
+            style="text-decoration: none; color: white;">NÃO</a></button>
       </div>
     </div>
 
@@ -234,4 +283,40 @@
     id.style.left = Math.round(Math.random() * 250) - 200 + 'px';
   }
 </script>
+
+<!--FLIP CARD STYLE-->
+<style>
+  .flip-card {
+    perspective: 1000px;
+    transition: transform 0.5s;
+    position: relative;
+    height: 14rem;
+    /* Defina a altura desejada */
+  }
+
+  .flip-card-inner {
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+  }
+
+  .flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+  }
+
+  /* Estilos para a parte de trás do card */
+  .flip-card-back {
+    transform: rotateY(180deg);
+    background-color: #f0f0f0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+</style>
 {% endblock %}
