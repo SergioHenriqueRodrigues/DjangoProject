@@ -84,8 +84,23 @@
       <hr class="bg-light">
       <h2 class="text-center" style="font-family: monospace;">Planeja se juntar a gente?</h2>
       <div class="button-wrapper d-flex justify-content-center">
-        <button class="button">SIM</button>
+        <div class="wrapper">
+          <a href="#demo-modal"><button class="button">SIM</button></a>
+        </div>
         <button class="button" id="move" onmouseover="runaway(this)">NÃO</button>
+      </div>
+
+    </div>
+    <div id="demo-modal" class="modal">
+      <div class="modal__content">
+        <h1 style="font-family: 'Courier New', Courier, monospace;">YourNotes</h1>
+        <p>Obrigado por gostar do nosso trabalho, estamos sempre trabalhando para melhorar sua experiência como usuário.</p>
+        <hr>
+        <div class="modal__footer">
+          Feito por <a href="https://youtu.be/dQw4w9WgXcQ?si=zMK9_Nbj-Hv-5bzl"
+            target="_blank">@YourNotesTeam</a>
+        </div>
+        <a href="#" class="modal__close">&times;</a>
       </div>
     </div>
   </main>
@@ -98,7 +113,7 @@
 </body>
 
 <style>
-  #move{
+  #move {
     position: relative;
   }
 
@@ -147,10 +162,72 @@
   }
 </style>
 
+<!--MODAL STYLE-->
+<style>
+  .wrapper a {
+    display: inline-block;
+    text-decoration: none;
+
+    border-radius: 3px;
+    text-transform: uppercase;
+    color: #585858;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  .modal {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(77, 77, 77, .7);
+    transition: all .4s;
+  }
+
+  .modal:target {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .modal__content {
+    border-radius: 4px;
+    position: relative;
+    width: 500px;
+    max-width: 90%;
+    background: #fff;
+    padding: 1em 2em;
+  }
+
+  .modal__footer {
+    text-align: right;
+
+    a {
+      color: #585858;
+    }
+
+    i {
+      color: #d02d2c;
+    }
+  }
+
+  .modal__close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: #585858;
+    text-decoration: none;
+  }
+</style>
+
 <script>
   function runaway(id) {
     id.style.top = Math.round(Math.random() * 250) - 100 + 'px';
     id.style.left = Math.round(Math.random() * 250) - 200 + 'px';
-}
+  }
 </script>
 {% endblock %}
