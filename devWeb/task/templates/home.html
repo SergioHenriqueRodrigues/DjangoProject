@@ -127,7 +127,7 @@
       <!--MENSAGEM FINAL-->
       <div style="font-family: monospace;">
         <h4 class="d-flex justify-content-center">Comece Agora:</h4>
-        <h5 class="d-flex text-center">Criar uma conta no YourNotes é rápido e fácil. Basta fazer login e começar a
+        <h5 class="d-flex" style="text-align: justify;">Criar uma conta no YourNotes é rápido e fácil. Basta fazer login e começar a
           criar suas notas pessoais. Simplifique sua vida e mantenha todas as suas ideias e informações importantes
           organizadas e acessíveis. O YourNotes está aqui para tornar a sua jornada de anotações mais fácil e eficiente.
         </h5>
@@ -144,8 +144,7 @@
         <div class="wrapper">
           <a href="#demo-modal"><button class="button">SIM</button></a>
         </div>
-        <button class="button" id="move" onmouseover="runaway(this)"><a href="#demo-nao"
-            style="text-decoration: none; color: white;">NÃO</a></button>
+        <button class="button" id="move" onmouseover="runaway(this)"><a href="#demo-nao" style="text-decoration: none; color: white;">NÃO</a></button>
       </div>
     </div>
 
@@ -167,7 +166,7 @@
     <div id="demo-nao" class="modal">
       <div class="modal__content">
         <h1 style="font-family: 'Courier New', Courier, monospace;">YourNotes</h1>
-        <p>você é insistente não é? Custa dar uma chance para o nosso produto?
+        <p>Você é insistente não é? Custa dar uma chance para o nosso produto?
         </p>
         <hr style="height: 1px; background-color: black;">
         <div class="modal__footer">
@@ -183,6 +182,7 @@
 <style>
   #move {
     position: relative;
+    transition: 0.1s ease;
   }
 
   .button {
