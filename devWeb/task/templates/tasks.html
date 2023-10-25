@@ -1,10 +1,10 @@
 {% extends 'menu.html' %}
 {% block content %}
-
+<body class="bg-dark">
 <main class="container mt-5">
   <div class="row">
     <div class="col-md-5 offset-md-3">
-      <h1 class="text-center"> Tarefas </h1>
+      <h1 class="text-center text-light"> Tarefas </h1>
       <ul class="list-group">
         {% for task in tasks %}
           <a class="list-group-item" href="{% url 'taskDetalhe'  task.id %}">
@@ -21,4 +21,5 @@
     </div>
   </div>
 </main>
+</body>
 {% endblock %}

@@ -1,10 +1,10 @@
 {% extends 'menu.html' %}
 {% block content %}
-
+<body class="bg-dark">
 <main class="container mt-5">
   <div class="row">
     <div class="col-md-5 offset-md-3">
-      <h1 class="text-center"> Detalhes das Tarefas </h1>
+      <h1 class="text-center text-light"> Detalhes das Tarefas </h1>
       {{error}}
 
       <form action="#" method="POST" class="card card-body" style="height: 400px;">
@@ -23,8 +23,9 @@
           </form>
         </div>
       </form>
-      <h1 class="text-white">.</h1>
+      <h1 class="text-dark">.</h1>
     </div>
   </div>
 </main>
+</body>
 {% endblock %}

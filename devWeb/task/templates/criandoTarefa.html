@@ -9,6 +9,7 @@
     crossorigin="anonymous"></script>
 </head>
 
+<body class="bg-dark">
 <main class="container mt-5">
   <div class="row">
     <div class="col-md-5 offset-md-3">
@@ -16,7 +17,7 @@
         {{ error }}
 
         {% csrf_token %}
-        <h1  class="text-center">Criar Tarefa</h1>
+        <h1  class="text-center text-light">Criar Tarefa</h1>
 
 				<div class="d-flex flex-row align-items-center mb-4">
           <i class="fas fa-user fa-lg me-3 fa-fw"></i>
@@ -41,7 +42,7 @@
 							</svg>
 						</div>
 					</label>
-					<p style="padding-top: 5px;">Tarefa importante</p>
+					<p style="padding-top: 5px;" class="text-light">Tarefa importante</p>
 				</div>				
 				
 				<div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
@@ -52,6 +53,7 @@
     </div>
   </div>
 </main>
+</body>
 
 <style>
   .glow-on-hover {
