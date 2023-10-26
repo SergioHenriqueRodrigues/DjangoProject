@@ -1,47 +1,49 @@
 {% extends 'menu.html' %}
 {% block content %}
 
+<body class="bg-dark">
+  <main class="container mt-5">
+    <div class="row">
+      <div class="col-md-5 offset-md-3">
+        <form method="POST" class="mx-1 mx-md-4">
+          {{ error }}
 
-<main class="container mt-5">
-  <div class="row">
-    <div class="col-md-5 offset-md-3">
-      <form method="POST" class="mx-1 mx-md-4">
-        {{ error }}
-
-        {% csrf_token %}
-        <h1  class="text-center">Cadastrar</h1>
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-user fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <input type="text" id="username" name="username" class="form-control" placeholder="Nome"/>
-            <!--<label class="form-label" for="username">Your Name</label>-->
+          {% csrf_token %}
+          <h1 class="text-center text-light">Cadastrar</h1>
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-user fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="text" id="username" name="username" class="form-control" placeholder="Nome" />
+              <!--<label class="form-label" for="username">Your Name</label>-->
+            </div>
           </div>
-        </div>
 
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <input type="password" id="password1" name="password1" class="form-control" placeholder="Senha"/>
-            <!--<label class="form-label" for="password1">Password</label>-->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="password" id="password1" name="password1" class="form-control" placeholder="Senha" />
+              <!--<label class="form-label" for="password1">Password</label>-->
+            </div>
           </div>
-        </div>
 
-        <div class="d-flex flex-row align-items-center mb-4">
-          <i class="fas fa-key fa-lg me-3 fa-fw"></i>
-          <div class="form-outline flex-fill mb-0">
-            <input type="password" id="password2" name="password2" class="form-control" placeholder="Confirmar senha"/>
-            <!--<label class="form-label" for="password2">Repeat your password</label>-->
+          <div class="d-flex flex-row align-items-center mb-4">
+            <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+            <div class="form-outline flex-fill mb-0">
+              <input type="password" id="password2" name="password2" class="form-control"
+                placeholder="Confirmar senha" />
+              <!--<label class="form-label" for="password2">Repeat your password</label>-->
+            </div>
           </div>
-        </div>
 
-        <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
-          <button class="glow-on-hover" type="submit">Cadastrar</button>
-        </div>
+          <div class="d-flex justify-content-center mx-4 mb-3 mb-lg-4">
+            <button class="glow-on-hover" type="submit">Cadastrar</button>
+          </div>
 
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-</main>
+  </main>
+</body>
 
 <style>
   .glow-on-hover {
@@ -55,14 +57,14 @@
     position: relative;
     z-index: 0;
     border-radius: 10px;
-}
+  }
 
-.glow-on-hover:before {
+  .glow-on-hover:before {
     content: '';
     background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
     position: absolute;
     top: -2px;
-    left:-2px;
+    left: -2px;
     background-size: 400%;
     z-index: -1;
     filter: blur(5px);
@@ -72,21 +74,21 @@
     opacity: 0;
     transition: opacity .3s ease-in-out;
     border-radius: 10px;
-}
+  }
 
-.glow-on-hover:active {
+  .glow-on-hover:active {
     color: #000
-}
+  }
 
-.glow-on-hover:active:after {
+  .glow-on-hover:active:after {
     background: transparent;
-}
+  }
 
-.glow-on-hover:hover:before {
+  .glow-on-hover:hover:before {
     opacity: 1;
-}
+  }
 
-.glow-on-hover:after {
+  .glow-on-hover:after {
     z-index: -1;
     content: '';
     position: absolute;
@@ -96,12 +98,20 @@
     left: 0;
     top: 0;
     border-radius: 10px;
-}
+  }
 
-@keyframes glowing {
-    0% { background-position: 0 0; }
-    50% { background-position: 400% 0; }
-    100% { background-position: 0 0; }
-}
+  @keyframes glowing {
+    0% {
+      background-position: 0 0;
+    }
+
+    50% {
+      background-position: 400% 0;
+    }
+
+    100% {
+      background-position: 0 0;
+    }
+  }
 </style>
 {% endblock %}
