@@ -1,3 +1,4 @@
+{% extends 'menu.html' %}
 {% block content %}
 <!--APIS-->
 
@@ -8,21 +9,25 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
   <script src="https://unpkg.com/scrollreveal"></script>
   <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
-  <link rel="shortcut icon" href="https://pbs.twimg.com/media/F9XRvMWWEAAyWVt?format=png&name=240x240" type="image/x-icon">
+  <link rel="shortcut icon" href="https://pbs.twimg.com/media/F9XRvMWWEAAyWVt?format=png&name=240x240"
+    type="image/x-icon">
 </head>
 
-<body style="background-color: #212529;" class="text-light">
-  <h4 class="text-center pt-3" style="width: 800px;">Ops, parece que suas notas pessoais estão perdidas no espaço cibernético profundo, como um buraco negro digital! 🚀🌌</h4>
+<main style="background-color: #212529;" class="text-light main">
+  <h4 class="text-center pt-3" style="width: 800px;">Ops, parece que suas notas pessoais estão perdidas no espaço
+    cibernético profundo, como um buraco negro digital! 🚀🌌</h4>
 
-  <img style="width: 350px;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cebff1ae-ca78-44e7-8245-f66a23bc4cce/dgdq45o-db9586e1-555f-4bf3-a409-fff1d1bb3058.png/v1/fit/w_828,h_828/desenho_para_a_pagina_404_do_projeto_by_serginnho_dgdq45o-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2NlYmZmMWFlLWNhNzgtNDRlNy04MjQ1LWY2NmEyM2JjNGNjZVwvZGdkcTQ1by1kYjk1ODZlMS01NTVmLTRiZjMtYTQwOS1mZmYxZDFiYjMwNTgucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Y6opFt8-vVKiEjJGP74u7b4NdvRz7hhrUPYEP7qSuHU" class="floating-image">
+  <img style="width: 350px;"
+    src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cebff1ae-ca78-44e7-8245-f66a23bc4cce/dgdq45o-db9586e1-555f-4bf3-a409-fff1d1bb3058.png/v1/fit/w_828,h_828/desenho_para_a_pagina_404_do_projeto_by_serginnho_dgdq45o-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2NlYmZmMWFlLWNhNzgtNDRlNy04MjQ1LWY2NmEyM2JjNGNjZVwvZGdkcTQ1by1kYjk1ODZlMS01NTVmLTRiZjMtYTQwOS1mZmYxZDFiYjMwNTgucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Y6opFt8-vVKiEjJGP74u7b4NdvRz7hhrUPYEP7qSuHU"
+    class="floating-image">
 
   <h4>Clique no botão abaixo para voltar para a Home</h4>
 
   <a href="..\" class="link"><button type="submit" class="button" class="link">Home</button></a>
-</body>
+</main>
 
 <style>
-  body {
+  .main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -52,10 +57,11 @@
 </style>
 
 <style>
-  .link{
+  .link {
     text-decoration: none;
     padding-bottom: 15px;
   }
+
   .button {
     display: block;
     padding: 0.75rem 1.25rem;
@@ -95,4 +101,14 @@
     align-self: flex-start;
   }
 </style>
+
+<script>
+  ScrollReveal().reveal('.floating-image', {
+    distance: '100px',
+    origin: 'top',
+    duration: 1000,
+    easing: 'ease-in-out', 
+    scale: 1.2,
+  });
+</script>
 {% endblock %}
