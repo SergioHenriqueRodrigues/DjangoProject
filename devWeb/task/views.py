@@ -137,3 +137,6 @@ def exibirTarefasCompletadas(request):
   tasks = Task.objects.filter(user=request.user, datecompleted__isnull=False).order_by 
   ('-datecompleted') 
   return render(request, 'tasks.html', { 'tasks' : tasks })
+
+def erro(request):
+  return render(request, '404.html')

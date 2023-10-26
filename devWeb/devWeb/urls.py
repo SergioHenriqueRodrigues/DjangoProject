@@ -14,5 +14,5 @@ urlpatterns = [
     path('criando/<int:task_id>/complete', views.completeTarefa, name='completeTarefa'), 
     path('criando/<int:task_id>/delete', views.deletarTarefa, name='deletarTarefa'), 
     path('exibir_tarefas_completadas', views.exibirTarefasCompletadas, name='exibirTarefasCompletadas'), 
-
+    path('erro/', views.erro, name='404'),
 ]

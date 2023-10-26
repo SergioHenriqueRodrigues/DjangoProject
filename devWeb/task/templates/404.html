@@ -1,18 +1,98 @@
-{% extends 'menu.html' %}
 {% block content %}
+<!--APIS-->
 
 <head>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-    crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://unpkg.com/scrollreveal@4.0.5/dist/scrollreveal.min.js"></script>
+  <link rel="shortcut icon" href="https://pbs.twimg.com/media/F9XRvMWWEAAyWVt?format=png&name=240x240" type="image/x-icon">
 </head>
 
-<body class="bg-dark">
-<main class="container mt-5">
-  <h1>Pagina não encontrada</h1>
-</main>
+<body style="background-color: #212529;" class="text-light">
+  <h4 class="text-center pt-3" style="width: 800px;">Ops, parece que suas notas pessoais estão perdidas no espaço cibernético profundo, como um buraco negro digital! 🚀🌌</h4>
+
+  <img style="width: 350px;" src="https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/cebff1ae-ca78-44e7-8245-f66a23bc4cce/dgdq45o-db9586e1-555f-4bf3-a409-fff1d1bb3058.png/v1/fit/w_828,h_828/desenho_para_a_pagina_404_do_projeto_by_serginnho_dgdq45o-414w-2x.png?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTI4MCIsInBhdGgiOiJcL2ZcL2NlYmZmMWFlLWNhNzgtNDRlNy04MjQ1LWY2NmEyM2JjNGNjZVwvZGdkcTQ1by1kYjk1ODZlMS01NTVmLTRiZjMtYTQwOS1mZmYxZDFiYjMwNTgucG5nIiwid2lkdGgiOiI8PTEyODAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.Y6opFt8-vVKiEjJGP74u7b4NdvRz7hhrUPYEP7qSuHU" class="floating-image">
+
+  <h4>Clique no botão abaixo para voltar para a Home</h4>
+
+  <a href="..\" class="link"><button type="submit" class="button" class="link">Home</button></a>
 </body>
 
+<style>
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height: 100vh;
+    margin: 0;
+  }
+
+  .floating-image {
+    animation: float 3s ease-in-out infinite;
+    width: 200px;
+    /* Ajuste o tamanho da imagem conforme necessário */
+  }
+
+  @keyframes float {
+
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-20px);
+      /* Ajuste a altura de flutuação conforme necessário */
+    }
+  }
+</style>
+
+<style>
+  .link{
+    text-decoration: none;
+    padding-bottom: 15px;
+  }
+  .button {
+    display: block;
+    padding: 0.75rem 1.25rem;
+    border: 0;
+    border-radius: 4px;
+    background-image: linear-gradient(to right top, #e10b49, #e0097b, #cb36ab, #9f58d4, #4e72ef, #4e72ef);
+    color: #fff;
+    user-select: none;
+    font-size: 1rem;
+    transform-style: preserve-3d;
+  }
+
+  .button:before,
+  .button:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    border-radius: 4px;
+    background-color: hsl(218deg 92% 35%);
+    transform: translateZ(-5px);
+  }
+
+  .botton:after {
+    background-color: hsl(218deg 92% 20%);
+    transform: translateZ(-10px);
+  }
+
+  .button-wrapper {
+    gap: 10px;
+    display: flex;
+    position: relative;
+    perspective: 400px;
+    align-self: flex-start;
+  }
+</style>
 {% endblock %}
