@@ -6,8 +6,10 @@
     <div class="row">
       <div class="col-md-5 offset-md-3">
         <form action="/signin/" method="POST" class="mx-1 mx-md-4">
-          {{ error }}
-
+          <div class="alert alert-danger text-center" style="width: 350px; margin: 0 auto;" role="alert">
+            {{ error }}
+        </div>
+        
           {% csrf_token %}
           <h1 class="text-center text-light">Logar</h1>
           <div class="d-flex flex-row align-items-center mb-4">
