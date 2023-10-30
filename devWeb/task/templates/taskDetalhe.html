@@ -1,5 +1,6 @@
 {% extends 'menu.html' %}
 {% block content %}
+
 <body class="bg-dark">
 <main class="container mt-5">
   <div class="row">
@@ -7,25 +8,31 @@
       <h1 class="text-center text-light"> Detalhes das Tarefas </h1>
       {{error}}
 
-      <form action="#" method="POST" class="card card-body" style="height: 400px;">
+      <form action="#" method="POST" class="card card-body">
         {% csrf_token %}
         {{form}}
         <button type="submit" class="btn btn-primary mt-2"> Atualizar </button>
-        <div class="mt-2 d-flex row-gap-3 justify-content-center gap-3">
-          <form action="{% url 'completeTarefa' task.id %}" method="POST">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-success"> Completar </button>
-          </form>
-  
-          <form action="{% url 'deletarTarefa' task.id %}" method="POST">
-            {% csrf_token %}
-            <button type="submit" class="btn btn-danger "> Deletar </button>
-          </form>
-        </div>
       </form>
-      <h1 class="text-dark">.</h1>
+
+      <div class="mt-5 d-flex" style="justify-content: space-around;" >
+        <form action="{% url 'completeTarefa' task.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-success"> Completar </button>
+        </form>
+
+        <form action="{% url 'deletarTarefa' task.id %}" method="POST">
+          {% csrf_token %}
+          <button type="submit" class="btn btn-danger "> Deletar </button>
+        </form>
+      </div>
+      
     </div>
   </div>
 </main>
 </body>
+
+</br>
+</br>
+</br>
+
 {% endblock %}
