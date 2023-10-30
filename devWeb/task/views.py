@@ -115,12 +115,12 @@ def taskDetalhe(request, task_id):
 #Completar tarefa
 @login_required  
 def completeTarefa(request, task_id):
-  task = get_object_or_404(Task, pk=task_id, user=request.user)
+    task = get_object_or_404(Task, pk=task_id, user=request.user)
 
-  if request.method == 'POST':
-    task.datecompleted = timezone.now()
-    task.save()
-    return redirect('tasks')
+    if request.method == 'POST':
+        task.datecompleted = timezone.now()
+        task.save()
+        return redirect('tasks')
 
 #Deletar tarefa
 @login_required  

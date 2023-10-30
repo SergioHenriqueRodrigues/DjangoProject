@@ -25,15 +25,17 @@
       </button>
       <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar"
         aria-labelledby="offcanvasNavbarLabel">
-
+    
         <div class="d-flex justify-content-center m-3">
           {% if user.is_authenticated %}
-            <h5 class="d-flex align-items-center">Olá, {{ user.username }}!</h5>
+          <h5 class="d-flex align-items-center">Olá, {{ user.username }}!</h5>
           {% else %}
-            <h5 class=" d-flex align-items-center">Bem-vindo forasteiro!</h5>
+          <h5 class=" d-flex align-items-center">Bem-vindo forasteiro!</h5>
           {% endif %}
-          <button type="button" class="btn-close bg-light ms-auto" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          <button type="button" class="btn-close bg-light ms-auto" data-bs-dismiss="offcanvas"
+            aria-label="Close"></button>
         </div>
+    
         <hr class="bg-light" style="padding: 0px; margin: 0px;">
         <div class="offcanvas-body">
           <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
@@ -77,8 +79,8 @@
             {% endif %}
           </ul>
         </div>
-        </>
       </div>
+    </div>
   </nav>
 
   {% block content %}
